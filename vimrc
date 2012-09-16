@@ -27,6 +27,7 @@ Bundle 'astashov/vim-ruby-debugger'
 Bundle 'kaichen/vim-snipmate-ruby-snippets'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
+Bundle 'vim-scripts/ZoomWin'
 
 " Vim Plugins
 filetype plugin indent on
