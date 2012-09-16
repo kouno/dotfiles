@@ -1,19 +1,125 @@
-set nocompatible  " Use Vim settings, rather then Vi settings
+" Default settings
+set laststatus=2  " Always display the status line
 set nobackup
+set nocp          " Use Vim settings, rather then Vi settings
+set noswapfile
 set nowritebackup
-set history=50
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
+filetype off                   " required!
 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Bundles
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'msanders/snipmate.vim'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-bundler'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'astashov/vim-ruby-debugger'
+Bundle 'kaichen/vim-snipmate-ruby-snippets'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'kana/vim-textobj-user'
+
+" Vim Plugins
 filetype plugin indent on
+
+autocmd vimenter * if !argc() | NERDTree | endif
+
+" Trailing space removal
+autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+" Improve syntax highlighting
+au BufRead,BufNewFile Gemfile set filetype=ruby
+au BufRead,BufNewFile *.md set filetype=markdown
+
+" color scheme of the moment:
+syntax on
+colorscheme tomorrow-night-eighties
+highlight NonText guibg=#060606
+highlight Folded  guibg=#0A0A0A guifg=#9090D0"
+
+" Snippets are activated by Shift+Tab
+let g:snippetsEmu_key = "<S-Tab>"
+
+" Search by increment (/)
+set incsearch
+set hlsearch
+
+" Tabs (key) management
+set cindent
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+" Add numbers to line
+set number
+set numberwidth=5
+
+" Font
+set guifont:Inconsolata:h14
+
+" Set a 80 column guideline
+set colorcolumn=80
+
+" Fold Configuration
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+
+" Tabulation (feature) mapping
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+map  <C-n> :tabnew<CR>
+
+" CtrlP
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" TagBar
+nmap <F8> :TagbarToggle<CR>
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+" Remove highlighting
+nnoremap <CR> :noh<CR><CR>
+
+" Search multiple tags
+nnoremap \] :ts <c-r><c-w><CR>
+
+" Reload Ctags using F12
+map <C-F12> :!ctags -R . 2> /dev/null && echo 'Ctags reloaded'
+
+" Display extra whitespace
+set list listchars=tab:»·,trail:·
+
+" Snippets are activated by Shift+Tab
+let g:snippetsEmu_key = "<S-Tab>"
+
+" Tags
+let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+
+" Debugger
+let g:ruby_debugger_progname = 'mvim'
+
+" Tab completion options
+set wildmode=longest,list,full
+set wildmenu
+set complete=.,w,t
 
 augroup vimrcEx
   au!
@@ -30,56 +136,5 @@ augroup vimrcEx
     \ endif
 augroup END
 
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set expandtab
-
-" Display extra whitespace
-set list listchars=tab:»·,trail:·
-
-" Local config
-if filereadable(".vimrc.local")
-  source .vimrc.local
-endif
-
-" Use Ack instead of Grep when available
-if executable("ack")
-  set grepprg=ack\ -H\ --nogroup\ --nocolor
-endif
-
-" Color scheme
-colorscheme github
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
-
-" Numbers
-set number
-set numberwidth=5
-
-" Snippets are activated by Shift+Tab
-let g:snippetsEmu_key = "<S-Tab>"
-
-" Tab completion options
-set wildmode=list:longest,list:full
-set complete=.,w,t
-
-" Tags
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-
-" Cucumber navigation commands
-autocmd User Rails Rnavcommand step features/step_definitions -glob=**/* -suffix=_steps.rb
-autocmd User Rails Rnavcommand config config -glob=**/* -suffix=.rb -default=routes
-" :Cuc my text (no quotes) -> runs cucumber scenarios containing "my text"
-command! -nargs=+ Cuc :!ack --no-heading --no-break <q-args> | cut -d':' -f1,2 | xargs bundle exec cucumber --no-color
-
-
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
-
+" Remap map leader to ','
+let mapleader=','
