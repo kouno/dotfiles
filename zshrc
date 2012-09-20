@@ -25,6 +25,7 @@ alias ll='ls -hl'
 alias la='ls -la'
 alias grep='grep --colour=auto'
 alias mkdir='mkdir -p'
+alias vim='mvim'
 
 # git
 alias g="git"

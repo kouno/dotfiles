@@ -13,22 +13,25 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Bundles
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'msanders/snipmate.vim'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'majutsushi/tagbar'
-Bundle 'tpope/vim-bundler'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'vim-ruby/vim-ruby'
+Bundle "pangloss/vim-javascript"
 Bundle 'astashov/vim-ruby-debugger'
 Bundle 'kaichen/vim-snipmate-ruby-snippets'
-Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
-Bundle 'vim-scripts/ZoomWin'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'msanders/snipmate.vim'
+Bundle 'ndreynolds/vim-cakephp'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/AutoComplPop'
+Bundle 'vim-scripts/ZoomWin'
 
 " Vim Plugins
 filetype plugin indent on
