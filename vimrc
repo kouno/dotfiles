@@ -14,6 +14,7 @@ call vundle#rc()
 
 " Bundles
 Bundle "pangloss/vim-javascript"
+Bundle 'Raimondi/delimitMate'
 Bundle 'astashov/vim-ruby-debugger'
 Bundle 'kaichen/vim-snipmate-ruby-snippets'
 Bundle 'kana/vim-textobj-user'
@@ -32,6 +33,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/AutoComplPop'
 Bundle 'vim-scripts/ZoomWin'
+Bundle 'scrooloose/nerdcommenter'
 
 " Vim Plugins
 filetype plugin indent on
@@ -50,7 +52,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " color scheme of the moment:
 syntax on
-colorscheme tomorrow-night-eighties
+colorscheme Tomorrow-Night-Eighties
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0"
 
