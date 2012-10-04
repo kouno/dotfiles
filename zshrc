@@ -91,3 +91,6 @@ setopt CORRECT CORRECT_ALL
 
 # Enable extended globbing
 setopt EXTENDED_GLOB
+
+# zsh
+source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

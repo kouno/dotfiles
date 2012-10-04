@@ -1,43 +1,43 @@
 [user]
-	name = Vincent Bonmalais
-	email = vb.kouno@gmail.com
+  name = Vincent Bonmalais
+  email = vb.kouno@gmail.com
 [color]
-	ui = auto
+  ui = auto
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+  current = yellow reverse
+  local = yellow
+  remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
 [color "status"]
-	added = green
-	changed = red
-	untracked = red
+  added = green
+  changed = red
+  untracked = red
 [core]
-	editor = vim
-	quotepath = false
-	excludesfile = /Users/Kouno/.gitignore
+  editor = vim
+  quotepath = false
+  excludesfile = /Users/Kouno/.gitignore
 [alias]
   w = wtf
-	st = status
-	ci = commit
-	br = branch
-	co = checkout
-	df = diff
-	lg = log -p
-	logg = log --graph --decorate
-	graph = log --graph --decorate --pretty=oneline --abbrev-commit
-;	wtf = !git-wtf
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  logg = log --graph --decorate
+  graph = log --graph --decorate --pretty=oneline --abbrev-commit
+;  wtf = !git-wtf
 [merge]
-	tool = opendiff 
-	prompt = false
+  tool = vimdiff
+  prompt = false
 [difftool]
-	prompt = false
+  prompt = false
 [difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
 [diff]
-	tool = Kaleidoscope
-	renames = copies
+  tool = Kaleidoscope
+  renames = copies
