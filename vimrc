@@ -7,15 +7,16 @@ set nowritebackup
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 
-filetype off                   " required!
+" Remove filetype before Vundle.
+filetype off
 
+" Load Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Bundles
-Bundle "pangloss/vim-javascript"
 Bundle 'Raimondi/delimitMate'
-Bundle 'astashov/vim-ruby-debugger'
+Bundle 'Shougo/neocomplcache'
 Bundle 'kaichen/vim-snipmate-ruby-snippets'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
@@ -24,24 +25,31 @@ Bundle 'majutsushi/tagbar'
 Bundle 'msanders/snipmate.vim'
 Bundle 'ndreynolds/vim-cakephp'
 Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'pangloss/vim-javascript'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/AutoComplPop'
 Bundle 'vim-scripts/ZoomWin'
-Bundle 'scrooloose/nerdcommenter'
 
 " Vim Plugins
 filetype plugin indent on
+
+" Neo completion
+" Completion
+let g:neocomplcache_enable_at_startup = 1
 
 autocmd vimenter * if !argc() | NERDTree | endif
 
 " Trailing space removal
 autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Delete buffer instead of keeping it open
+set nohidden
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -86,12 +94,18 @@ set nofoldenable
 set foldlevel=1
 
 " Tabulation (feature) mapping
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
-map  <C-n> :tabnew<CR>
+map <C-l> :tabn<CR>
+map <C-h> :tabp<CR>
+map <C-n> :tabnew<CR>
+
+" Open tag in a new tab window.
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" Infinite search with CtrlP
+let g:ctrlp_max_files=0
 
 " TagBar
 nmap <F8> :TagbarToggle<CR>
@@ -119,9 +133,6 @@ let g:snippetsEmu_key = "<S-Tab>"
 
 " Tags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-
-" Debugger
-let g:ruby_debugger_progname = 'mvim'
 
 " Tab completion options
 set wildmode=longest,list,full
