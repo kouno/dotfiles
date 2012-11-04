@@ -79,6 +79,11 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Vroom Config
+let g:vroom_use_vimux = 1
+let g:vroom_use_bundle_exec = 0
+" let g:vroom_spec_command = "zeus rspec "
+
 " Add numbers to line
 set number
 set numberwidth=5
