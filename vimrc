@@ -17,6 +17,7 @@ call vundle#rc()
 " Bundles
 Bundle 'Raimondi/delimitMate'
 Bundle 'Shougo/neocomplcache'
+Bundle 'benmills/vimux'
 Bundle 'kaichen/vim-snipmate-ruby-snippets'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
@@ -29,6 +30,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'skalnik/vim-vroom'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
@@ -106,6 +108,12 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Infinite search with CtrlP
 let g:ctrlp_max_files=0
+
+" Default filters
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)|tmp$',
+  \ 'file': '\v\.(exe|so|dll)$'
+  \ }
 
 " TagBar
 nmap <F8> :TagbarToggle<CR>

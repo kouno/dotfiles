@@ -115,3 +115,6 @@ setopt EXTENDED_GLOB
 
 # zsh
 source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Don't autocomplete anymore
+unsetopt correct_all
