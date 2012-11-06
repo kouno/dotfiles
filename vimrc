@@ -15,6 +15,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " Bundles
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Shougo/neocomplcache'
 Bundle 'benmills/vimux'
@@ -89,7 +90,7 @@ set number
 set numberwidth=5
 
 " Font
-set guifont:Inconsolata:h14
+set guifont:Inconsolata-dz-Powerline:14
 
 " Set a 80 column guideline
 set colorcolumn=80
@@ -146,6 +147,9 @@ let g:snippetsEmu_key = "<S-Tab>"
 
 " Tags
 let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
 
 " Tab completion options
 set wildmode=longest,list,full
