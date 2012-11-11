@@ -32,6 +32,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'sjl/gundo.vim'
 Bundle 'skalnik/vim-vroom'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-fugitive'
@@ -124,6 +125,9 @@ let g:ctrlp_custom_ignore = {
 
 " TagBar
 nmap <F8> :TagbarToggle<CR>
+
+" Gundo
+nmap <F5> :GundoToggle<CR>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
