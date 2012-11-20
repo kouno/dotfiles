@@ -63,6 +63,9 @@ alias cuc="cucumber"
 alias gi="gem install"
 alias giv="gem install -v"
 
+# MacVim
+alias mvim="mvim -v"
+
 alias whats-my-ip="curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'"
 
 # RVM

@@ -85,8 +85,11 @@ set wildmode=longest,list,full
 set wildmenu
 set complete=.,w,t
 
-" Remap map leader to ','
-let mapleader=','
+" Set mac clipboard
+set clipboard=unnamed
+
+" Remap map leader to space
+let mapleader=' '
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -113,6 +116,9 @@ nnoremap <CR> :noh<CR><CR>
 
 " Search multiple tags
 nnoremap \] :ts <c-r><c-w><CR>
+
+" Copy to system clipboard
+nnoremap <leader>y "+y
 
 " Open tag in a new tab window.
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
