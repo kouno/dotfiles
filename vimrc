@@ -20,6 +20,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'msanders/snipmate.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'ndreynolds/vim-cakephp'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'pangloss/vim-javascript'
@@ -69,7 +70,7 @@ set numberwidth=5
 set guifont:Inconsolata-dz-Powerline:14
 
 " Set a 80 column guideline
-set colorcolumn=80
+set colorcolumn=120
 
 " Fold Configuration
 set foldmethod=indent
@@ -186,3 +187,8 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0"
   let g:vroom_use_vimux = 1
   let g:vroom_use_bundle_exec = 0
   " let g:vroom_spec_command = "zeus rspec "
+
+" Indent-Guides
+  let g:indent_guides_auto_colors = 0
+  hi IndentGuidesOdd  ctermbg=236
+  hi IndentGuidesEven ctermbg=237
