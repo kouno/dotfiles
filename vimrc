@@ -12,6 +12,7 @@ call vundle#rc()
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neosnippet'
 Bundle 'benmills/vimux'
 Bundle 'groenewege/vim-less'
 Bundle 'kaichen/vim-snipmate-ruby-snippets'
@@ -192,3 +193,35 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0"
   let g:indent_guides_auto_colors = 0
   hi IndentGuidesOdd  ctermbg=236
   hi IndentGuidesEven ctermbg=237
+
+" Neo completion
+  let g:neocomplcache_enable_at_startup = 1
+
+  " AutoComplPop like behavior.
+  let g:neocomplcache_enable_auto_select = 1
+
+  " Recommended key-mappings.
+  " <TAB>: completion.
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  " <C-h>, <BS>: close popup and delete backword char.
+  inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+  inoremap <expr><C-y>  neocomplcache#close_popup()
+  inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+" Neo snippet
+  " Plugin key-mappings.
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+
+  " SuperTab like snippets behavior.
+  imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+  " For snippet_complete marker.
+  if has('conceal')
+    set conceallevel=2 concealcursor=i
+  endif
+
+  " Tell Neosnippet about the other snippets
+  let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
