@@ -41,6 +41,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/ZoomWin'
+Bundle 'vim-scripts/closetag.vim'
 
 " Vim Plugins
 filetype plugin indent on
@@ -57,6 +58,7 @@ set nowritebackup
 set ruler         " show the cursor position all the time
 set showcmd       " display incomplete commands
 set nohidden      " delete buffer instead of keeping it open
+set backspace=2   " make backspace work like most other apps
 
 " Search by increment (/)
 set incsearch
@@ -230,3 +232,6 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0"
 
   " Tell Neosnippet about the other snippets
   let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
+
+" Closetag
+  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 

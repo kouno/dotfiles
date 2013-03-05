@@ -4,22 +4,20 @@ snippet spechelper
 
 # describe
 snippet des
-	describe ${1:description}" do
+	describe "${1:description}" do
 		${2}
 	end
 snippet desc
 	describe ${1:class} do
-		before do
-			${2}
+		it "${2}" do
+			${3}
 		end
-
 	end
 snippet descd
 	describe ${1:class}, "${2:description}" do
-		before do
+		it "${2}" do
 			${3}
 		end
-
 	end
 snippet desd
 	describe "${1:description}" do
@@ -41,21 +39,21 @@ snippet after-
 
 # it should
 snippet it
-	it "should ${1:description}" do
+	it "${1:description}" do
 		${2}
 	end
 snippet itsh
-	it "should ${1:description}" do
+	it "${1:description}" do
 		${2:model}.should ${3}
 	end
 snippet itshbe
-	it "should ${1:description}" do
-  		${2:model}.should be_${3}
+	it "${1:description}" do
+		${2:model}.should be_${3}
 	end
 
 # matchers
 snippet sheq
-	${1:targe}.should == ${2}
+	${1:target}.should == ${2}
 snippet shbe
 	${1:target}.should be_${2:result}
 
