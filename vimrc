@@ -13,14 +13,13 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'benmills/vimux'
 Bundle 'groenewege/vim-less'
-Bundle 'kaichen/vim-snipmate-ruby-snippets'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'msanders/snipmate.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'ndreynolds/vim-cakephp'
 Bundle 'nelstrom/vim-textobj-rubyblock'
@@ -167,9 +166,6 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0"
 " NERDTree
   autocmd vimenter * if !argc() | NERDTree | endif
 
-" Neo completion
-  let g:neocomplcache_enable_at_startup = 1
-
 " Powerline
   let g:Powerline_symbols = 'fancy'
 
@@ -210,11 +206,16 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0"
   " Recommended key-mappings.
   " <TAB>: completion.
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
   " <C-h>, <BS>: close popup and delete backword char.
   inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
   inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
   inoremap <expr><C-y>  neocomplcache#close_popup()
   inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+  " Fix conflict with snipmate
+  "au BufEnter * inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "<TAB>"
+  "au BufEnter * inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "<TAB>"
 
 " Neo snippet
   " Plugin key-mappings.
@@ -231,7 +232,12 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0"
   endif
 
   " Tell Neosnippet about the other snippets
-  let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
+  let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets/'
 
 " Closetag
   au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
+
+" vim-gitgutter
+
+  " Remove highlighting
+  highlight clear SignColumn
