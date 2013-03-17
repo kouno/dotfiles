@@ -201,7 +201,7 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0"
   let g:neocomplcache_enable_at_startup = 1
 
   " AutoComplPop like behavior.
-  let g:neocomplcache_enable_auto_select = 1
+  let g:neocomplcache_enable_auto_select = 0
 
   " Recommended key-mappings.
   " <TAB>: completion.
