@@ -39,6 +39,7 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/Auto-Pairs'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'vim-scripts/closetag.vim'
 
