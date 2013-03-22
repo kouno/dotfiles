@@ -129,11 +129,14 @@ nnoremap \] :ts <c-r><c-w><CR>
 " Copy to system clipboard
 nnoremap <leader>y "+y
 
+" Copy the whole file to system clipboard
+nnoremap <leader>a :%y+<CR>
+
 " Open tag in a new tab window.
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Reload Ctags using F12
-map <C-F12> :!ctags -R . 2> /dev/null && echo 'Ctags reloaded'
+map <F12> :!ctags -R . 2> /dev/null && echo 'Ctags reloaded'<CR>
 
 augroup vimrcEx
   au!
