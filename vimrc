@@ -25,6 +25,7 @@ Bundle 'ndreynolds/vim-cakephp'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'sjl/gundo.vim'
@@ -131,6 +132,12 @@ nnoremap <leader>y "+y
 
 " Copy the whole file to system clipboard
 nnoremap <leader>a :%y+<CR>
+
+" Quit by pressing zq
+nnoremap <leader>s :w<CR>
+
+" Quit by pressing zq
+nnoremap <leader>q :qa
 
 " Open tag in a new tab window.
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
