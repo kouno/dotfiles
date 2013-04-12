@@ -29,7 +29,7 @@ ZSH_THEME="geoffgarside"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=()
+plugins=(brew vagrant git-remote-branch osx vi-mode tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,6 +120,10 @@ setopt EXTENDED_GLOB
 source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Don't autocomplete anymore
-unsetopt correct_all
+unsetopt CORRECT_ALL
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+pATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+export EDITOR='vim'

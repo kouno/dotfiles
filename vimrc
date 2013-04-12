@@ -15,6 +15,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'benmills/vimux'
+Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
@@ -25,7 +26,6 @@ Bundle 'ndreynolds/vim-cakephp'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'godlygeek/tabular'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'sjl/gundo.vim'
@@ -137,7 +137,7 @@ nnoremap <leader>a :%y+<CR>
 nnoremap <leader>s :w<CR>
 
 " Quit by pressing zq
-nnoremap <leader>q :qa
+nnoremap <leader>q :q
 
 " Open tag in a new tab window.
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
