@@ -4,12 +4,17 @@ abbr        it('...', function () { ... })
     ${2}
   });
 
+snippet     xit
+abbr        xit('...', function () { ... })
+  xit("${1}", function () {
+    ${2}
+  });
+
 snippet     desc
 abbr        describe('...', function () { ... })
   describe("${1}", function () {
     ${2}
   });
-
 
 snippet     before-
 abbr        beforeEach(function () { ... })
