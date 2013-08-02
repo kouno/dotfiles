@@ -66,7 +66,6 @@ set incsearch
 set hlsearch
 
 " Tabs (key) management
-set cindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
