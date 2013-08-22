@@ -46,8 +46,13 @@ options     head
   }
 
 snippet     struct
-abbr        struct StructName { ... }
-options     head
+abbr        type StructName struct { ... }
   type ${1:name} struct {
+    ${2:variable}
+  }
+
+snippet     inter
+abbr        type interfaceName interface { ... }
+  type ${1:name} interface {
     ${2:variable}
   }
