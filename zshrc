@@ -29,7 +29,19 @@ ZSH_THEME="geoffgarside"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew vagrant git-remote-branch osx vi-mode tmuxinator)
+plugins=(
+  brew
+  git-remote-branch
+  go
+  osx
+  tmuxinator
+  vagrant
+  vi-mode
+  vundle
+  rails
+  rails3
+  rails4
+)
 
 source $ZSH/oh-my-zsh.sh
 
