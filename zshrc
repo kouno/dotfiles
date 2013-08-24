@@ -31,6 +31,7 @@ ZSH_THEME="geoffgarside"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
   brew
+  gem
   git-remote-branch
   go
   osx
@@ -41,6 +42,7 @@ plugins=(
   rails
   rails3
   rails4
+  zeus
 )
 
 source $ZSH/oh-my-zsh.sh
