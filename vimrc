@@ -114,7 +114,6 @@ autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
 " Tabulation (feature) mapping
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
-map <C-n> :tabnew<CR>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
