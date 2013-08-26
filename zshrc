@@ -142,4 +142,8 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 export EDITOR='vim'
 
+# Force utf-8 (fixing NERDtree characters)
+export LC_ALL=en_US.utf-8
+export LANG="$LC_ALL"
+
 PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'

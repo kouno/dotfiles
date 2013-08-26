@@ -2,6 +2,8 @@
 " Bundles
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+scriptencoding utf-8
+
 " Remove filetype before Vundle.
 filetype off
 
