@@ -24,10 +24,10 @@ abbr        for i := range var { ... }
   }
 
 snippet     func
-abbr        func (...) { ... }
+abbr        func ...(...) { ... }
 options     head
-  func (${1:variables}) {
-    ${2}
+  func ${1:name}(${2:variables}) {
+    ${3}
   }
 
 snippet     if
