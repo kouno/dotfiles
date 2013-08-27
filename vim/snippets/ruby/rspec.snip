@@ -1,59 +1,59 @@
 # rspec
 snippet spechelper
-	require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')${1}
+  require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')${1}
 
 # describe
 snippet des
-	describe "${1:description}" do
-		${2}
-	end
+  describe "${1:description}" do
+    ${2}
+  end
 snippet desc
-	describe ${1:class} do
-		it "${2}" do
-			${3}
-		end
-	end
+  describe ${1:class} do
+    it "${2}" do
+      ${3}
+    end
+  end
 snippet descd
-	describe ${1:class}, "${2:description}" do
-		it "${2}" do
-			${3}
-		end
-	end
+  describe ${1:class}, "${2:description}" do
+    it "${2}" do
+      ${3}
+    end
+  end
 snippet desd
-	describe "${1:description}" do
-		before do
-			${2}
-		end
+  describe "${1:description}" do
+    before do
+      ${2}
+    end
 
-	end
+  end
 
 # before & after
 snippet before-
-	before(:${1:each}) do
-		${2}
-	end
+  before(:${1:each}) do
+    ${2}
+  end
 snippet after-
-	after(:${1:each}) do
-		${2}
-	end
+  after(:${1:each}) do
+    ${2}
+  end
 
 # it should
 snippet it
-	it "${1:description}" do
-		${2}
-	end
+  it "${1:description}" do
+    ${2}
+  end
 snippet itsh
-	it "${1:description}" do
-		${2:model}.should ${3}
-	end
+  it "${1:description}" do
+    ${2:model}.should ${3}
+  end
 snippet itshbe
-	it "${1:description}" do
-		${2:model}.should be_${3}
-	end
+  it "${1:description}" do
+    ${2:model}.should be_${3}
+  end
 
 # matchers
 snippet sheq
-	${1:target}.should == ${2}
+  ${1:target}.should == ${2}
 snippet shbe
-	${1:target}.should be_${2:result}
+  ${1:target}.should be_${2:result}
 
