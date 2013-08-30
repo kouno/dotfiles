@@ -11,12 +11,12 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'Lokaltog/vim-powerline'
 Bundle 'Raimondi/delimitMate'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'benmills/vimux'
+Bundle 'bling/vim-airline'
 Bundle 'gmarik/vundle'
 Bundle 'godlygeek/tabular'
 Bundle 'groenewege/vim-less'
@@ -31,6 +31,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'skalnik/vim-vroom'
 Bundle 'terryma/vim-multiple-cursors'
@@ -180,8 +181,17 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0"
 " NERDTree
   autocmd vimenter * if !argc() | NERDTree | endif
 
-" Powerline
-  let g:Powerline_symbols = 'fancy'
+" Airline
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme='bubblegum'
+  let g:airline_symbols = {}
+  let g:airline_left_sep = '⮀'
+  let g:airline_left_alt_sep = '⮁'
+  let g:airline_right_sep = '⮂'
+  let g:airline_right_alt_sep = '⮃'
+  let g:airline_symbols.branch = '⭠'
+  let g:airline_symbols.readonly = '⭤'
+  let g:airline_symbols.linenr = '⭡'
 
 " TagBar
   nmap <F8> :TagbarToggle<CR>
@@ -254,7 +264,7 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0"
   let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets/'
 
 " Closetag
-  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
+  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 " vim-gitgutter
 
