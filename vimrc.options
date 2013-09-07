@@ -1,0 +1,92 @@
+" NERDTree
+  autocmd vimenter * if !argc() | NERDTree | endif
+
+" Airline
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme='bubblegum'
+  let g:airline_symbols = {}
+  let g:airline_left_sep = '⮀'
+  let g:airline_left_alt_sep = '⮁'
+  let g:airline_right_sep = '⮂'
+  let g:airline_right_alt_sep = '⮃'
+  let g:airline_symbols.branch = '⭠'
+  let g:airline_symbols.readonly = '⭤'
+  let g:airline_symbols.linenr = '⭡'
+
+" TagBar
+  nmap <F8> :TagbarToggle<CR>
+
+" Gundo
+  nmap <F5> :GundoToggle<CR>
+
+" CtrlP
+  set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+  " Infinite search
+  let g:ctrlp_max_files=0
+
+  " Default filters
+  let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)|tmp$',
+    \ 'file': '\v\.(exe|so|dll)$'
+    \ }
+
+" Vroom Config
+  let g:vroom_use_vimux = 1
+  let g:vroom_use_bundle_exec = 0
+  " let g:vroom_spec_command = "zeus rspec "
+
+" Indent-Guides
+  let g:indent_guides_auto_colors = 0
+  hi IndentGuidesOdd  ctermbg=236
+  hi IndentGuidesEven ctermbg=237
+
+" Neo completion
+  let g:neocomplcache_enable_at_startup = 1
+
+  " AutoComplPop like behavior.
+  let g:neocomplcache_enable_auto_select = 0
+
+  " Recommended key-mappings.
+  " <TAB>: completion.
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
+  " <C-h>, <BS>: close popup and delete backword char.
+  inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+  inoremap <expr><C-y>  neocomplcache#close_popup()
+  inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+  " Fix conflict with snipmate
+  "au BufEnter * inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "<TAB>"
+  "au BufEnter * inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "<TAB>"
+
+" Neo snippet
+  " Plugin key-mappings.
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+  " SuperTab like snippets behavior.
+  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"
+
+  " For snippet_complete marker.
+  if has('conceal')
+    set conceallevel=2 concealcursor=i
+  endif
+
+  " Tell Neosnippet about the other snippets
+  let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets/'
+
+" Closetag
+  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+
+" vim-gitgutter
+
+  " Remove highlighting
+  highlight clear SignColumn

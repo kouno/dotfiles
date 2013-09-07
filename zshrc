@@ -56,34 +56,6 @@ source $ZSH/oh-my-zsh.sh
 # Update paths
 export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
 
-# Aliases
-alias ls='ls -G'
-alias ll='ls -hl'
-alias la='ls -la'
-alias grep='grep --colour=auto'
-alias mkdir='mkdir -p'
-
-# git
-alias g="git"
-alias gci="git pull --rebase && rake && git push"
-
-# Bundler
-alias b="bundle"
-
-# Tests and Specs
-alias t="ruby -I test"
-alias s="rspec"
-alias cuc="cucumber"
-
-# Rubygems
-alias gi="gem install"
-alias giv="gem install -v"
-
-# MacVim
-alias mvim="mvim -v"
-
-alias whats-my-ip="curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'"
-
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
@@ -149,3 +121,9 @@ export LC_ALL=en_US.utf-8
 export LANG="$LC_ALL"
 
 PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+# aliases
+[[ -f ~/.aliases  ]] && source ~/.aliases
+
+# Local config
+[[ -f ~/.zshrc.local  ]] && source ~/.zshrc.local
