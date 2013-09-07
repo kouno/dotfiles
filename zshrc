@@ -32,6 +32,7 @@ ZSH_THEME="geoffgarside"
 plugins=(
   brew
   gem
+  git-extras
   git-remote-branch
   go
   osx
@@ -42,6 +43,7 @@ plugins=(
   rails
   rails3
   rails4
+  rvm
   zeus
 )
 
