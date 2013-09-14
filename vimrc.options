@@ -57,10 +57,6 @@
   inoremap <expr><C-y>  neocomplcache#close_popup()
   inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-  " Fix conflict with snipmate
-  "au BufEnter * inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "<TAB>"
-  "au BufEnter * inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "<TAB>"
-
 " Neo snippet
   " Plugin key-mappings.
   imap <C-k>     <Plug>(neosnippet_expand_or_jump)

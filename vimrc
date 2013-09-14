@@ -92,10 +92,10 @@ nnoremap <leader>y "+y
 " Copy the whole file to system clipboard
 nnoremap <leader>a :%y+<CR>
 
-" Quit by pressing zq
+" Save by pressing " s"
 nnoremap <leader>s :w<CR>
 
-" Quit by pressing zq
+" Quit by pressing " q<CR>"
 nnoremap <leader>q :q
 
 " Open tag in a new tab window.
