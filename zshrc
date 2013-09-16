@@ -53,14 +53,8 @@ source $ZSH/oh-my-zsh.sh
 ## Welcoming message. Customize it as needed.
 ##
 
-# Update paths
-export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
-
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
-# Editor for bundler
-export BUNDLER_EDITOR=vim
 
 # vi mode
 bindkey -v
@@ -115,6 +109,9 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 export EDITOR='vim'
+
+# Editor for bundler
+export BUNDLER_EDITOR=vim
 
 # Force utf-8 (fixing NERDtree characters)
 export LC_ALL=en_US.utf-8
