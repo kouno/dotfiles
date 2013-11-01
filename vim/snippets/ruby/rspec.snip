@@ -4,27 +4,31 @@ snippet spechelper
 
 # describe
 snippet des
-  describe "${1:description}" do
+  describe '${1:description}' do
     ${2}
   end
 snippet desc
   describe ${1:class} do
-    it "${2}" do
+    it '${2}' do
       ${3}
     end
   end
 snippet descd
-  describe ${1:class}, "${2:description}" do
-    it "${2}" do
+  describe ${1:class}, '${2:description}' do
+    it '${2}' do
       ${3}
     end
   end
 snippet desd
-  describe "${1:description}" do
+  describe '${1:description}' do
     before do
       ${2}
     end
 
+  end
+snippet cont
+  context '${1:description}' do
+    ${2}
   end
 
 # before & after
@@ -39,15 +43,15 @@ snippet after-
 
 # it should
 snippet it
-  it "${1:description}" do
+  it '${1:description}' do
     ${2}
   end
 snippet itsh
-  it "${1:description}" do
+  it '${1:description}' do
     expect(${2:model}).to ${3}
   end
 snippet itshbe
-  it "${1:description}" do
+  it '${1:description}' do
     expect(${2:model}).to be_${3}
   end
 

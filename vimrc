@@ -65,7 +65,7 @@ let mapleader=' '
 let g:html_indent_tags = 'li\|p'
 
 " Tags
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
+let g:Tlist_Ctags_Cmd="ctags --exclude='*.js' --exclude='*.sql'"
 
 " Trailing space removal
 autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
@@ -102,7 +102,7 @@ nnoremap <leader>q :q
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Reload Ctags using F12
-map <F12> :!ctags -R . 2> /dev/null && echo 'Ctags reloaded'<CR>
+map <F12> :!ctags -R --exclude='*.js' --exclude='*.sql' . 2> /dev/null && echo 'Ctags reloaded'<CR>
 
 augroup vimrcEx
   au!
