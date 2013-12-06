@@ -25,6 +25,8 @@ set backspace=2   " make backspace work like most other apps
 " Search by increment (/)
 set incsearch
 set hlsearch
+set ignorecase                  " searches are case insensitive...
+set smartcase                   " ... unless they contain at least one capital letter
 
 " Tabs (key) management
 set tabstop=2
