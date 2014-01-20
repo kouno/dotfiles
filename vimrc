@@ -104,7 +104,11 @@ nnoremap <leader>q :q
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Reload Ctags using F12
-map <F12> :!ctags -R --exclude='*.js' --exclude='*.sql' . 2> /dev/null && echo 'Ctags reloaded'<CR>
+if executable('ripper-tags')
+  map <F12> :!ripper-tags -R --exclude='*.js' --exclude='*.sql' . 2> /dev/null && echo 'Ripper-Tags: Ctags reloaded'<CR>
+else
+  map <F12> :!ctags -R --exclude='*.js' --exclude='*.sql' . 2> /dev/null && echo 'Ctags reloaded'<CR>
+endif
 
 augroup vimrcEx
   au!
@@ -123,6 +127,7 @@ augroup END
 
 " Improve syntax highlighting
 au BufRead,BufNewFile Gemfile set filetype=ruby
+au BufNewFile,BufRead *.prawn set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " color scheme of the moment:

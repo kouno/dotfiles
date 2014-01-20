@@ -8,6 +8,7 @@ call vundle#rc()
 Bundle 'Raimondi/delimitMate'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
 Bundle 'benmills/vimux'
 Bundle 'bling/vim-airline'
 Bundle 'gmarik/vundle'

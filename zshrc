@@ -30,20 +30,21 @@ ZSH_THEME="geoffgarside"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
+  bower
   brew
   gem
   git-extras
   git-remote-branch
   go
   osx
-  tmuxinator
-  vagrant
-  vi-mode
-  vundle
   rails
   rails3
   rails4
   rvm
+  tmuxinator
+  vagrant
+  vi-mode
+  vundle
   zeus
 )
 
@@ -104,7 +105,7 @@ source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Don't autocomplete anymore
 unsetopt CORRECT_ALL
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH="./bin:$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
