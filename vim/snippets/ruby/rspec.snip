@@ -7,7 +7,7 @@ snippet des
   describe '${1:description}' do
     ${2}
   end
-snippet desc
+snippet descc
   describe ${1:class} do
     it '${2}' do
       ${3}
@@ -32,13 +32,13 @@ snippet cont
   end
 
 # before & after
-snippet before-
-  before(:${1:each}) do
-    ${2}
+snippet bef
+  before(:each) do
+    ${1}
   end
-snippet after-
-  after(:${1:each}) do
-    ${2}
+snippet aft
+  after(:each) do
+    ${1}
   end
 
 # it should
@@ -56,8 +56,8 @@ snippet itshbe
   end
 
 # matchers
-snippet sheq
-  expect(${1:target}).to == ${2}
-snippet shbe
+snippet exeq
+  expect(${1:target}).to eq(${2})
+snippet exbe
   expect(${1:target}).to be_${2:result}
 

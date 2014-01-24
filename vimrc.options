@@ -39,6 +39,9 @@
   " AutoComplPop like behavior.
   let g:neocomplcache_enable_auto_select = 0
 
+  " Force autocomplete over Rails.vim
+  let g:neocomplcache#force_overwrite_completefunc = 1
+
   " Recommended key-mappings.
   " <TAB>: completion.
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
