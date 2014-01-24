@@ -41,3 +41,5 @@
 [diff]
   tool = Kaleidoscope
   renames = copies
+[push]
+	default = matching
