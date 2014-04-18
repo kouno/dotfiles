@@ -23,7 +23,7 @@
 [alias]
   w = wtf
   st = status
-  ci = commit
+  ci = commit --verbose
   br = branch
   co = checkout
   df = diff
