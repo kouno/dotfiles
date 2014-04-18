@@ -105,8 +105,8 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Reload Ctags using F12
 if executable('ripper-tags')
-  map <F12> :!ripper-tags -R --exclude='*.js' --exclude='*.sql' . 2> /dev/null && echo 'Ripper-Tags: Ctags reloaded'<CR>
-else
+  map <F12> :!ripper-tags -R --exclude='*.js' --exclude='*.sql' . 2> /dev/null && echo 'Ripper tags reloaded'<CR>
+elseif executable('ctags')
   map <F12> :!ctags -R --exclude='*.js' --exclude='*.sql' . 2> /dev/null && echo 'Ctags reloaded'<CR>
 endif
 
@@ -135,6 +135,10 @@ syntax on
 colorscheme Tomorrow-Night-Eighties
 highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#9090D0"
+
+" Default spacing configuration
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
+autocmd Filetype coffee setlocal ts=2 sts=2 sw=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins options

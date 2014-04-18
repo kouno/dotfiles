@@ -38,8 +38,6 @@ plugins=(
   go
   osx
   rails
-  rails3
-  rails4
   rvm
   tmuxinator
   vagrant
