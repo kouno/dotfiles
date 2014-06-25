@@ -40,7 +40,7 @@ set numberwidth=5
 " Font
 set guifont:Inconsolata-dz-Powerline:14
 
-" Set a 80 column guideline
+" Set a column guideline
 set colorcolumn=120
 
 " Fold Configuration
@@ -62,12 +62,6 @@ set clipboard=unnamed
 
 " Remap map leader to space
 let mapleader=' '
-
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
-
-" Tags
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js' --exclude='*.sql'"
 
 " Trailing space removal
 autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e

@@ -97,15 +97,13 @@ setopt CORRECT CORRECT_ALL
 # Enable extended globbing
 setopt EXTENDED_GLOB
 
-# zsh
-source ~/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+unsetopt nomatch
 
 # Don't autocomplete anymore
 unsetopt CORRECT_ALL
 
-PATH="./bin:$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+source $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export EDITOR='vim'
 
