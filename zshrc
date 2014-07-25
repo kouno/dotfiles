@@ -33,6 +33,7 @@ plugins=(
   bower
   brew
   gem
+  github
   git-extras
   git-remote-branch
   go
@@ -44,6 +45,7 @@ plugins=(
   vi-mode
   vundle
   zeus
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -115,6 +117,9 @@ export LC_ALL=en_US.utf-8
 export LANG="$LC_ALL"
 
 PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
+# Add completion from /usr/local/share/zsh
+fpath=('/usr/local/share/zsh/site-functions' $fpath)
 
 # aliases
 [[ -f ~/.aliases  ]] && source ~/.aliases

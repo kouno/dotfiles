@@ -42,4 +42,8 @@
   tool = Kaleidoscope
   renames = copies
 [push]
-	default = matching
+  default = matching
+[git-up "rebase"]
+  auto = false
+[gh]
+	protocol = https

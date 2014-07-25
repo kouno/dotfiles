@@ -70,12 +70,6 @@ autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
 " Remove highlighting
 nnoremap <CR> :noh<CR><CR>
 
@@ -93,6 +87,18 @@ nnoremap <leader>s :w<CR>
 
 " Quit by pressing " q<CR>"
 nnoremap <leader>q :q
+
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
+" Use open new files faster with " e<stuff>"
+cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
 
 " Open tag in a new tab window.
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -121,14 +127,30 @@ augroup END
 
 " Improve syntax highlighting
 au BufRead,BufNewFile Gemfile set filetype=ruby
+au BufRead,BufNewFile *.hbs set filetype=html
 au BufNewFile,BufRead *.prawn set filetype=ruby
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " color scheme of the moment:
 syntax on
-colorscheme Tomorrow-Night-Eighties
+
+if &diff
+  " vimdiff uses ugly 256 colors.
+  " I change the scheme because my eyes are suffering
+  set t_Co=256
+  set background=dark
+  colorscheme vividchalk
+else
+  colorscheme Tomorrow-Night-Eighties
+endif
+
+highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=black
+highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
+highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black
+highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
+
 highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0"
+highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Default spacing configuration
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
