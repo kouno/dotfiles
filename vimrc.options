@@ -44,6 +44,9 @@ let g:html_indent_tags = ''
 " CtrlP
   set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+  " Map ctrl-t to search in tags
+  map <C-t> :CtrlPTag<cr>
+
   " Infinite search
   let g:ctrlp_max_files=0
 

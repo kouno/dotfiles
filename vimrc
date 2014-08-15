@@ -60,6 +60,10 @@ set complete=.,w,t
 " Set mac clipboard
 set clipboard=unnamed
 
+" buffers
+set wildcharm=<C-Z>
+nnoremap <F10> :b <C-Z>
+
 " Remap map leader to space
 let mapleader=' '
 
@@ -69,6 +73,9 @@ autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
 " Tabulation (feature) mapping
 map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
+
+" Map Y to copy the rest of the line
+nnoremap Y y$
 
 " Remove highlighting
 nnoremap <CR> :noh<CR><CR>
