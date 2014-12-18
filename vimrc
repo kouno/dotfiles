@@ -100,6 +100,17 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
+" Resize window (alt key character)
+"map <silent> <a-h> <c-w><
+"map <silent> <a-j> <c-w>-
+"map <silent> <a-k> <c-w>+
+"map <silent> <a-l> <c-w>>
+
+map <silent> ˙ <C-w><
+map <silent> ∆ <C-W>-
+map <silent> ˚ <C-W>+
+map <silent> ¬ <C-w>>
+
 " Use open new files faster with " e<stuff>"
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 map <leader>ew :e %%

@@ -33,7 +33,6 @@ plugins=(
   bower
   brew
   gem
-  github
   git-extras
   git-remote-branch
   go

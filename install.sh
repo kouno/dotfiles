@@ -1,5 +1,10 @@
 #!/bin/sh
 
+echo "Updating path_helper to fix path issue in vim..."
+echo "See hack from https://github.com/dotphiles/dotzsh/tree/c2d33b204c1f70c925f1507a6c366e5c395bfc36#mac-os-x"
+echo ""
+sudo chmod ugo-x /usr/libexec/path_helper
+
 cutstring="DO NOT EDIT BELOW THIS LINE"
 
 for name in *; do
