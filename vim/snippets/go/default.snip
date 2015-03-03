@@ -23,13 +23,13 @@ abbr        for i := range var { ... }
     ${2}
   }
 
-snippet     func
+snippet     funcc
 abbr        func ...(...) { ... }
 options     head
   func ${1:name}() {
   }
 
-snippet     funcc
+snippet     funcd
 abbr        func () ... (...) { ... }
 options     head
   func () ${1:name}() {
@@ -50,13 +50,13 @@ options     head
     ${2}
   }
 
-snippet     struct
+snippet     type
 abbr        type StructName struct { ... }
   type ${1:name} struct {
     ${2}
   }
 
-snippet     inter
+snippet     typei
 abbr        type interfaceName interface { ... }
   type ${1:name} interface {
     ${2}

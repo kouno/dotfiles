@@ -1,14 +1,31 @@
-snippet     Desc
+snippet     desc
 abbr        Describe (...)
   Describe("${1}", func() {
   })
 
-snippet     It
+snippet     it
 abbr        It (...)
   It("${1}", func() {
   })
 
-snippet     Cont
+snippet     cont
 abbr        Context (...)
   Context("${1}", func() {
   })
+
+snippet     bef
+abbr        BeforeEach(...)
+  BeforeEach(func() {
+    ${1}
+  })
+
+snippet     befs
+abbr        BeforeSuite(...)
+  BeforeSuite(func() {
+    ${1}
+  })
+
+
+snippet     exp
+abbr        Expect(...)
+  Expect(${1}).To
