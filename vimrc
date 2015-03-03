@@ -68,7 +68,7 @@ nnoremap <F10> :b <C-Z>
 let mapleader=' '
 
 " Trailing space removal
-autocmd FileType c,cpp,java,php,ruby autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,java,php,ruby,go autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Tabulation (feature) mapping
 map <C-l> :tabn<CR>

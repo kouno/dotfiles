@@ -9,6 +9,7 @@ let g:html_indent_tags = ''
 
 " TagBar
   nmap <F8> :TagbarToggle<CR>
+
   " Go config
   let g:tagbar_type_go = {
       \ 'ctagstype' : 'go',
@@ -38,6 +39,12 @@ let g:html_indent_tags = ''
       \ 'ctagsargs' : '-sort -silent'
   \ }
 
+" go-vim
+  let g:go_highlight_functions = 1
+  let g:go_highlight_structs = 1
+
+  let g:go_fmt_command = "goimports"
+
 " Gundo
   nmap <F5> :GundoToggle<CR>
 
@@ -51,8 +58,15 @@ let g:html_indent_tags = ''
   let g:ctrlp_max_files=0
 
   " Default filters
+  let dir_list = [
+    \ '\v[\/]\.(git|hg|svn)',
+    \ '\v[\/](node_modules|bower_components)',
+    \ '\v[\/]Godeps',
+    \ 'tmp$'
+  \ ]
+
   let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)|\v[\/](node_modules|bower_components)|tmp|spec/integration/vcr_cassettes|public/assets$',
+    \ 'dir':  join(dir_list, '|'),
     \ 'file': '\v\.(exe|so|dll)$'
     \ }
 
@@ -125,3 +139,13 @@ let g:html_indent_tags = ''
   nnoremap  <Leader>hk :call ri#OpenSearchPrompt(0)<cr> " horizontal split
   nnoremap  <Leader>vk :call ri#OpenSearchPrompt(1)<cr> " vertical split
   nnoremap  K :call ri#LookupNameUnderCursor()<cr> " keyword lookup
+
+" Go
+  au FileType go nmap <leader>r <Plug>(go-run)
+  au FileType go nmap <leader>b <Plug>(go-build)
+  au FileType go nmap <leader>t <Plug>(go-test)
+  au FileType go nmap <leader>c <Plug>(go-coverage)
+
+  au FileType go nmap <Leader>ds <Plug>(go-def-split)
+  au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+  au FileType go nmap <Leader>dt <Plug>(go-def-tab)

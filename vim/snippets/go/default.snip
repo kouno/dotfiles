@@ -26,8 +26,13 @@ abbr        for i := range var { ... }
 snippet     func
 abbr        func ...(...) { ... }
 options     head
-  func ${1:name}(${2:variables}) {
-    ${3}
+  func ${1:name}() {
+  }
+
+snippet     funcc
+abbr        func () ... (...) { ... }
+options     head
+  func () ${1:name}() {
   }
 
 snippet     if
@@ -48,11 +53,11 @@ options     head
 snippet     struct
 abbr        type StructName struct { ... }
   type ${1:name} struct {
-    ${2:variable}
+    ${2}
   }
 
 snippet     inter
 abbr        type interfaceName interface { ... }
   type ${1:name} interface {
-    ${2:variable}
+    ${2}
   }
