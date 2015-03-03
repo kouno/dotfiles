@@ -25,8 +25,8 @@ set backspace=2   " make backspace work like most other apps
 " Search by increment (/)
 set incsearch
 set hlsearch
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
+set ignorecase    " searches are case insensitive...
+set smartcase     " ... unless they contain at least one capital letter
 
 " Tabs (key) management
 set tabstop=2
@@ -122,11 +122,8 @@ map <leader>et :tabe %%
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Reload Ctags using F12
-if executable('ripper-tags')
-  map <F12> :!ripper-tags -R --exclude='*.js' --exclude='*.sql' . 2> /dev/null && echo 'Ripper tags reloaded'<CR>
-elseif executable('ctags')
-  map <F12> :!ctags -R --exclude='*.js' --exclude='*.sql' . 2> /dev/null && echo 'Ctags reloaded'<CR>
-endif
+map <F11> :!ripper-tags -R --exclude='*.js' --exclude='*.sql' . 2> /dev/null && echo 'Ripper-tags reloaded'<CR>
+map <F12> :!ctags -R --exclude='*.js' --exclude='*.sql' . 2> /dev/null && echo 'Ctags reloaded'<CR>
 
 augroup vimrcEx
   au!
