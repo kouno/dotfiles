@@ -35,7 +35,7 @@ plugins=(
   gem
   git-extras
   git-remote-branch
-  go
+  golang
   osx
   rails
   rvm
@@ -69,9 +69,11 @@ bindkey "^R" history-incremental-search-backward
 bindkey "^E" end-of-line
 
 # handy keybindings
-bindkey "^P" history-search-backward
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
 bindkey "^Y" accept-and-hold
-bindkey "^N" insert-last-word
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
 # expand functions in the prompt
