@@ -7,12 +7,12 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
 " Load Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Raimondi/delimitMate'
 Plugin 'Shougo/neocomplcache'
@@ -20,9 +20,7 @@ Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'benmills/vimux'
 Plugin 'bling/vim-airline'
-Plugin 'danchoi/ri.vim'
 Plugin 'fatih/vim-go'
-Plugin 'gmarik/vundle'
 Plugin 'godlygeek/tabular'
 Plugin 'groenewege/vim-less'
 Plugin 'jelera/vim-javascript-syntax'
@@ -55,6 +53,8 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/Auto-Pairs'
 Plugin 'vim-scripts/closetag.vim'
+Plugin 'wting/rust.vim'
+Plugin 'phildawes/racer'
 
 call vundle#end()
 

@@ -1,3 +1,5 @@
+echo "Sourcing ~/.zshrc..."
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/dotfiles/oh-my-zsh
 
@@ -38,7 +40,7 @@ plugins=(
   golang
   osx
   rails
-  rvm
+  npm
   tmuxinator
   vagrant
   vi-mode
@@ -48,13 +50,6 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-
-##
-## Welcoming message. Customize it as needed.
-##
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # vi mode
 bindkey -v
@@ -108,14 +103,6 @@ unsetopt CORRECT_ALL
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 source $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export EDITOR='vim'
-
-# Editor for bundler
-export BUNDLER_EDITOR=vim
-
-# Force utf-8 (fixing NERDtree characters)
-export LC_ALL=en_US.utf-8
-export LANG="$LC_ALL"
 
 PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 

@@ -135,17 +135,18 @@ let g:html_indent_tags = ''
 " Syntastic
   let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-']
 
-" ri.vim
-  nnoremap  <Leader>hk :call ri#OpenSearchPrompt(0)<cr> " horizontal split
-  nnoremap  <Leader>vk :call ri#OpenSearchPrompt(1)<cr> " vertical split
-  nnoremap  K :call ri#LookupNameUnderCursor()<cr> " keyword lookup
-
 " Go
   au FileType go nmap <leader>r <Plug>(go-run)
   au FileType go nmap <leader>b <Plug>(go-build)
-  au FileType go nmap <leader>t <Plug>(go-test)
+  au FileType go nmap <leader>t :GoTest -ginkgo.noColor=true<cr>
   au FileType go nmap <leader>c <Plug>(go-coverage)
 
   au FileType go nmap <Leader>ds <Plug>(go-def-split)
   au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
   au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+
+" Rust (Cargo)
+  au FileType rust nmap <leader>r :VimuxPromptCommand "cargo run"<cr><cr>
+  au FileType rust nmap <leader>t :VimuxPromptCommand "cargo test"<cr><cr>
+  au FileType rust nmap <leader>b :VimuxPromptCommand "cargo build"<cr><cr>

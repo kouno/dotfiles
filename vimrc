@@ -155,6 +155,9 @@ if &diff
   set t_Co=256
   set background=dark
   colorscheme vividchalk
+elseif isdirectory($SSHHOME)
+  " In case we use sshrc, source out theme file
+  source $SSHHOME/.sshrc.d/Tomorrow-Night-Eighties.vim
 else
   colorscheme Tomorrow-Night-Eighties
 endif

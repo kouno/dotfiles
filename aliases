@@ -30,4 +30,6 @@ alias giv="gem install -v"
 # MacVim
 alias mvim="mvim -v"
 
+# Only the best
+alias please="sudo !!"
 alias whats-my-ip="curl -s checkip.dyndns.org | grep -Eo '[0-9\.]+'"
