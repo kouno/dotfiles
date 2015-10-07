@@ -145,8 +145,10 @@ let g:html_indent_tags = ''
   au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
   au FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
-
 " Rust (Cargo)
   au FileType rust nmap <leader>r :VimuxPromptCommand "cargo run"<cr><cr>
   au FileType rust nmap <leader>t :VimuxPromptCommand "cargo test"<cr><cr>
   au FileType rust nmap <leader>b :VimuxPromptCommand "cargo build"<cr><cr>
+
+" Vimux
+  nmap <leader>o :VimuxPromptCommand "" <cr>
