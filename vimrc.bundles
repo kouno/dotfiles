@@ -14,31 +14,45 @@ call vundle#rc()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" Language support
+Plugin 'fatih/vim-go'
+Plugin 'rodjek/vim-puppet'
+Plugin 'wting/rust.vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'groenewege/vim-less'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'othree/html5.vim'
+
+" Interface
+Plugin 'majutsushi/tagbar'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+" Text manipulation
 Plugin 'Raimondi/delimitMate'
 Plugin 'Shougo/neocomplcache'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
-Plugin 'benmills/vimux'
-Plugin 'bling/vim-airline'
-Plugin 'fatih/vim-go'
 Plugin 'godlygeek/tabular'
-Plugin 'groenewege/vim-less'
-Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kana/vim-textobj-user'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'kien/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'othree/html5.vim'
-Plugin 'rodjek/vim-puppet'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'sjl/gundo.vim'
-Plugin 'skalnik/vim-vroom'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-scripts/Auto-Pairs'
+Plugin 'vim-scripts/closetag.vim'
+
+" Miscellanous
+Plugin 'benmills/vimux'
+Plugin 'phildawes/racer'
+Plugin 'scrooloose/syntastic'
+Plugin 'skalnik/vim-vroom'
+
+" tpope collection (yeah, he has a whole section for himself...)
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-endwise'
@@ -50,11 +64,6 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/Auto-Pairs'
-Plugin 'vim-scripts/closetag.vim'
-Plugin 'wting/rust.vim'
-Plugin 'phildawes/racer'
 
 call vundle#end()
 
