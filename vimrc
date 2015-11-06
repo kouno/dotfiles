@@ -159,7 +159,11 @@ elseif isdirectory($SSHHOME)
   " In case we use sshrc, source out theme file
   source $SSHHOME/.sshrc.d/Tomorrow-Night-Eighties.vim
 else
-  colorscheme Tomorrow-Night-Eighties
+  if has('nvim')
+    source ~/.vim/colors/Tomorrow-Night-Eighties.vim
+  else
+    colorscheme Tomorrow-Night-Eighties
+  endif
 endif
 
 highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=black
@@ -173,6 +177,18 @@ highlight Folded  guibg=#0A0A0A guifg=#9090D0
 " Default spacing configuration
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype coffee setlocal ts=2 sts=2 sw=2
+
+" nvim
+if has('nvim')
+  if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+      autocmd!
+      au InsertEnter * set timeoutlen=0
+      au InsertLeave * set timeoutlen=1000
+    augroup END
+  endif
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins options
