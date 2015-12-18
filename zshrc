@@ -114,3 +114,5 @@ fpath=('/usr/local/share/zsh/site-functions' $fpath)
 
 # Local config
 [[ -f ~/.zshrc.local  ]] && source ~/.zshrc.local
+
+[[ -s "/Users/kouno/.gvm/scripts/gvm" ]] && source "/Users/kouno/.gvm/scripts/gvm"

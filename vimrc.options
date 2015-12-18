@@ -5,7 +5,7 @@ let g:html_indent_tags = ''
 
 " Airline
   let g:airline_powerline_fonts = 1
-  let g:airline_theme='bubblegum'
+  let g:airline_theme='tomorrow'
 
 " TagBar
   nmap <F8> :TagbarToggle<CR>
@@ -151,7 +151,7 @@ let g:html_indent_tags = ''
   au FileType rust nmap <leader>b :VimuxPromptCommand "cargo build"<cr><cr>
 
 " Vimux
-  nmap <leader>o :VimuxPromptCommand "" <cr>
+  nmap <leader>o :VimuxPromptCommand<CR>
 
 " Vim json
   set conceallevel=0
