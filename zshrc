@@ -38,14 +38,14 @@ plugins=(
   git-extras
   git-remote-branch
   golang
+  grunt
+  npm
   osx
   rails
-  npm
   tmuxinator
   vagrant
   vi-mode
   vundle
-  zeus
   zsh-syntax-highlighting
 )
 
