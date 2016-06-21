@@ -46,4 +46,17 @@
 [git-up "rebase"]
   auto = false
 [gh]
-	protocol = https
+  protocol = https
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[diff-so-fancy]
+	markEmptyLines = false
+	changeHunkIndicators = false
+	stripLeadingSymbols = false
+[interactive]
+	diffFilter = diff-so-fancy
+[credential]
+	helper = osxkeychain

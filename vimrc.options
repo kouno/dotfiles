@@ -5,7 +5,7 @@ let g:html_indent_tags = ''
 
 " Airline
   let g:airline_powerline_fonts = 1
-  let g:airline_theme='tomorrow'
+  let g:airline_theme='dark'
 
 " TagBar
   nmap <F8> :TagbarToggle<CR>
@@ -57,11 +57,15 @@ let g:html_indent_tags = ''
   " Infinite search
   let g:ctrlp_max_files=0
 
+  " Stay in the directory I cd-ed into
+  let g:ctrlp_working_path_mode = 0
+
   " Default filters
   let dir_list = [
     \ '\v[\/]\.(git|hg|svn)',
     \ '\v[\/](node_modules|bower_components)',
     \ '\v[\/]Godeps',
+    \ '\v[\/]public',
     \ 'tmp$'
   \ ]
 
@@ -81,22 +85,37 @@ let g:html_indent_tags = ''
   hi IndentGuidesEven ctermbg=237
 
 " Neo completion
-  let g:neocomplcache_enable_at_startup = 1
+  " Disable AutoComplPop.
+  let g:acp_enableAtStartup = 0
+  " Use neocomplete.
+  let g:neocomplete#enable_at_startup = 1
+  " Use smartcase.
+  let g:neocomplete#enable_smart_case = 1
+  " Set minimum syntax keyword length.
+  let g:neocomplete#sources#syntax#min_keyword_length = 2
 
-  " AutoComplPop like behavior.
-  let g:neocomplcache_enable_auto_select = 0
+  let g:neocomplete#enable_auto_select = 0
 
-  " Force autocomplete over Rails.vim
-  let g:neocomplcache#force_overwrite_completefunc = 1
+  " Enable omni completion.
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
   " Recommended key-mappings.
+  " <CR>: close popup and save indent.
+  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+  function! s:my_cr_function()
+    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+    " For no inserting <CR> key.
+    "return pumvisible() ? "\<C-y>" : "\<CR>"
+  endfunction
   " <TAB>: completion.
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-  inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<TAB>"
   " <C-h>, <BS>: close popup and delete backword char.
-  inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-  inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-  inoremap <expr><C-y>  neocomplcache#close_popup()
+  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " Neo snippet
   " Plugin key-mappings.

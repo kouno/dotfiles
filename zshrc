@@ -116,3 +116,5 @@ fpath=('/usr/local/share/zsh/site-functions' $fpath)
 [[ -f ~/.zshrc.local  ]] && source ~/.zshrc.local
 
 [[ -s "/Users/kouno/.gvm/scripts/gvm" ]] && source "/Users/kouno/.gvm/scripts/gvm"
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh

@@ -42,6 +42,7 @@ set guifont:Inconsolata-dz-Powerline:14
 
 " Set a column guideline
 set colorcolumn=120
+set textwidth=120
 
 " Fold Configuration
 set foldmethod=indent
@@ -59,6 +60,16 @@ set complete=.,w,t
 
 " Set mac clipboard
 set clipboard=unnamed
+
+" Send more characters for redraws
+set ttyfast
+
+" Enable mouse use in all modes
+set mouse=a
+
+" Set this to the name of your terminal that supports mouse codes.
+" Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
+set ttymouse=xterm2
 
 " buffers
 set wildcharm=<C-Z>
