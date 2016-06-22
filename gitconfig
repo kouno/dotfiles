@@ -60,3 +60,7 @@
 	diffFilter = diff-so-fancy
 [credential]
 	helper = osxkeychain
+[pager]
+	log = diff-so-fancy | less
+	show = diff-so-fancy | less
+	diff = diff-so-fancy | less
