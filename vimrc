@@ -69,7 +69,9 @@ set mouse=a
 
 " Set this to the name of your terminal that supports mouse codes.
 " Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
-set ttymouse=xterm2
+if !has('nvim')
+  set ttymouse=xterm2
+endif
 
 " buffers
 set wildcharm=<C-Z>
@@ -82,8 +84,8 @@ let mapleader=' '
 autocmd FileType c,cpp,java,php,ruby,go autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Tabulation (feature) mapping
-map <C-l> :tabn<CR>
-map <C-h> :tabp<CR>
+map <c-l> :tabn<CR>
+map <c-h> :tabp<CR>
 
 " Map Y to copy the rest of the line
 nnoremap Y y$
@@ -170,11 +172,7 @@ elseif isdirectory($SSHHOME)
   " In case we use sshrc, source out theme file
   source $SSHHOME/.sshrc.d/Tomorrow-Night-Eighties.vim
 else
-  if has('nvim')
-    source ~/.vim/colors/Tomorrow-Night-Eighties.vim
-  else
-    colorscheme Tomorrow-Night-Eighties
-  endif
+  colorscheme Tomorrow-Night-Eighties
 endif
 
 highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=black

@@ -29,6 +29,7 @@ Plugin 'othree/html5.vim'
 Plugin 'briancollins/vim-jst'
 Plugin 'vim-erlang/vim-erlang-runtime'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'flowtype/vim-flow'
 
 " Interface
 Plugin 'majutsushi/tagbar'
@@ -41,7 +42,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 " Text manipulation
 Plugin 'Raimondi/delimitMate'
-Plugin 'Shougo/neocomplete'
+Plugin 'Shougo/deoplete.nvim'
+"Plugin 'Shougo/neocomplete'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'godlygeek/tabular'
@@ -58,6 +60,7 @@ Plugin 'benmills/vimux'
 Plugin 'phildawes/racer'
 Plugin 'scrooloose/syntastic'
 Plugin 'skalnik/vim-vroom'
+Plugin 'Konfekt/FastFold'
 
 " tpope collection (yeah, he has a whole section for himself...)
 Plugin 'tpope/vim-bundler'

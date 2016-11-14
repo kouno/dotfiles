@@ -41,12 +41,12 @@ plugins=(
   grunt
   npm
   osx
-  rails
   tmuxinator
   vagrant
-  vi-mode
   vundle
   zsh-syntax-highlighting
+  #rails
+  #vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -109,6 +109,8 @@ PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr 
 # Add completion from /usr/local/share/zsh
 fpath=('/usr/local/share/zsh/site-functions' $fpath)
 
+which -s direnv && eval "$(direnv hook zsh)"
+
 # aliases
 [[ -f ~/.aliases  ]] && source ~/.aliases
 
@@ -118,3 +120,6 @@ fpath=('/usr/local/share/zsh/site-functions' $fpath)
 [[ -s "/Users/kouno/.gvm/scripts/gvm" ]] && source "/Users/kouno/.gvm/scripts/gvm"
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+export NVM_DIR="/Users/vincent.bonmalais/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
