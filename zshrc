@@ -100,9 +100,7 @@ unsetopt nomatch
 # Don't autocomplete anymore
 unsetopt CORRECT_ALL
 
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 source $HOME/dotfiles/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 
 PS1="$PS1"'$([ -n "$TMUX"  ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
@@ -117,7 +115,10 @@ which -s direnv && eval "$(direnv hook zsh)"
 # Local config
 [[ -f ~/.zshrc.local  ]] && source ~/.zshrc.local
 
-[[ -s "/Users/kouno/.gvm/scripts/gvm" ]] && source "/Users/kouno/.gvm/scripts/gvm"
+# The next line updates PATH for the Google Cloud SDK.
+[[ -s "${HOME}/google-cloud-sdk/path.zsh.inc" ]] && source "${HOME}/google-cloud-sdk/path.zsh.inc"
+
+[[ -s "${HOME}/.gvm/scripts/gvm" ]] && source "${HOME}/.gvm/scripts/gvm"
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
