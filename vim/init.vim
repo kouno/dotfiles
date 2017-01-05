@@ -1,1 +1,1 @@
-/Users/vincent.bonmalais/.vimrc
+../vimrc

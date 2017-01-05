@@ -43,7 +43,6 @@ plugins=(
   osx
   tmuxinator
   vagrant
-  vundle
   zsh-syntax-highlighting
   #rails
   #vi-mode
@@ -121,6 +120,3 @@ which -s direnv && eval "$(direnv hook zsh)"
 [[ -s "${HOME}/.gvm/scripts/gvm" ]] && source "${HOME}/.gvm/scripts/gvm"
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
-
-export NVM_DIR="/Users/vincent.bonmalais/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
